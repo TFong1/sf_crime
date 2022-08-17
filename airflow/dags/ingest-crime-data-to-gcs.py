@@ -23,7 +23,7 @@ import pandas as pd
 PROJECT_ID = os.environ.get("GCP_PROJECT_ID")
 BUCKET_ID = os.environ.get("GCP_GCS_BUCKET")
 BIGQUERY_DATASET = os.environ.get("BIGQUERY_DATASET", "sf_crime_data_all")
-APP_TOKEN = ""
+APP_TOKEN = os.environ.get("SODA_APP_TOKEN")
 
 dataset_soda_api_url = "https://data.sfgov.org/resource/wg3w-h783.json"
 dataset_date_field = "incident_date"

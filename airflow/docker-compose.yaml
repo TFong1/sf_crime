@@ -62,10 +62,8 @@ x-airflow-common:
     AIRFLOW__API__AUTH_BACKENDS: 'airflow.api.auth.backend.basic_auth'
     _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-}
     
-    GCP_PROJECT_ID: sf-crime-76032
-    GCP_GCS_BUCKET: sf-crime-data-lake
-    GOOGLE_APPLICATION_CREDENTIALS: /.google/credentials/etl-sf-crime-76032-credentials.json
-    AIRFLOW_CONN_GOOGLE_CLOUD_DEFAULT: google-cloud-platform://?extra__google_cloud_platform__key_path=/.google/credentials/etl-sf-crime-76032-credentials.json
+  env_file:
+    - .env
 
   volumes:
     - ./dags:/opt/airflow/dags
