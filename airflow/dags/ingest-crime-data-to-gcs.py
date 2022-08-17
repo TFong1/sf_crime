@@ -23,19 +23,17 @@ import pandas as pd
 PROJECT_ID = os.environ.get("GCP_PROJECT_ID")
 BUCKET_ID = os.environ.get("GCP_GCS_BUCKET")
 BIGQUERY_DATASET = os.environ.get("BIGQUERY_DATASET", "sf_crime_data_all")
+APP_TOKEN = ""
 
 dataset_soda_api_url = "https://data.sfgov.org/resource/wg3w-h783.json"
 dataset_date_field = "incident_date"
 path_to_local_home = os.environ.get("AIRFLOW_HOME", "/opt/airflow/")
 
-"""
-mon = 1
-yr = 2022
-dataset_url = f"https://data.sfgov.org/resource/wg3w-h783.json?$where=date_extract_y(incident_date)={yr}%20and%20date_extract_m(incident_date)={mon}"
-"""
+
+
 # Save to .CSV file first
 def download_crime_data(month, year, outputfile):
-	url = f"{dataset_soda_api_url}?$where=date_extract_y({dataset_date_field})={year}%20and%20date_extract_m({dataset_date_field})={month}"
+	url = f"{dataset_soda_api_url}?$$app_token={APP_TOKEN}&$where=date_extract_y({dataset_date_field})={year}%20and%20date_extract_m({dataset_date_field})={month}"
 	df = pd.read_json(url)
 	df.to_csv(outputfile, index=False)
 
