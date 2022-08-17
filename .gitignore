@@ -5,3 +5,4 @@ plugins/
 .terraform*
 terraform.tfstate*
 Notes/
+.env
