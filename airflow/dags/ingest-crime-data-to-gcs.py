@@ -3,7 +3,6 @@
   Written by Tony Fong
 """
 
-import imp
 import os
 import logging
 
@@ -138,17 +137,6 @@ default_args = {
 	"retries": 1
 }
 
-"""
-# DAG declaration -- using a Contect Manager (an implicit way)
-with DAG(
-	dag_id="sf_crime_data_ingestion_gcs_dag",
-	schedule_interval="@monthly",
-	default_args=default_args,
-	catchup=False,
-	max_active_runs=1,
-	tags=["sf-crime"]
-) as dag:
-"""
 
 sf_crime_data_dag = DAG(
 	dag_id="ingest_sf_crime_gcs",
