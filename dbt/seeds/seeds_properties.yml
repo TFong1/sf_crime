@@ -1,0 +1,7 @@
+
+version: 2
+
+seeds:
+  - name: incident_codes_lookup
+    description: >
+      List of incident codes along with their associated category and subcategory.
