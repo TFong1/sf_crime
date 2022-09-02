@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: dim_incident_codes
+    description: >
+      List of six-digit codes that describe the type of incident occurred.
+      The category and subcategory are provided by the San Francisco police department crime analysis unit.
+
+  - name: fact_incidents
+    description: >
+      The crime incidents reported in San Francisco police department.
