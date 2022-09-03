@@ -2,8 +2,8 @@
 {{ config(
     materialized='table',
     partition_by={
-        "field": "incident_date",
-        "data_type": "timestamp",
+        "field": "incident_datetime",
+        "data_type": "datetime",
         "granularity": "month"
     }
 ) }}
@@ -45,4 +45,4 @@ SELECT
     incident_data.filed_online
 FROM incident_data
 INNER JOIN dim_incident_codes
-    ON incident_data.incident_codes = dim_incident_codes.incident_codes
+    ON incident_data.incident_code = dim_incident_codes.incident_code

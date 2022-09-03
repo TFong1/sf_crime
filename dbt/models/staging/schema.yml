@@ -45,11 +45,6 @@ models:
           Incident codes are the system codes to describe a type of incident.  A single incident report
           can have one or more incident types associated. In those cases, you will see multiple rows
           representing a unique combination of the incident ID and incident code.
-        tests:
-          - relationships:
-              to: ref('incident_codes_lookup')
-              field: inc_code
-              severity: warn
       - name: incident_category
         description: >
           A category mapped on to the incident code used in statistics and reporting. Mappings provided by

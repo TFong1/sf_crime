@@ -9,3 +9,10 @@ models:
   - name: fact_incidents
     description: >
       The crime incidents reported in San Francisco police department.
+    columns:
+      - name: incident_code
+        tests:
+          - relationships:
+              to: ref('dim_incident_codes')
+              field: incident_code
+              severity: warn
