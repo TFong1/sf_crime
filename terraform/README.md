@@ -1,10 +1,10 @@
 # How to Set Up Terraform Environment
 
-## Flow
+## Steps
 
-1. Create main.tf file.
-2. Create Optional variables.tf file.
-3. Refresh Google service account's auth token for this session.
+1. Create main.tf file.  This file defines the infrastructure used in this project.
+2. Create variables.tf file.  This file contains the values for the variables used in the main.tf file.
+3. Refresh Google service account's auth token for this session.  If you have not already created a Google Cloud Platform account and project, do so before executing the commands below.
 
         gcloud auth application-default login
 
@@ -14,11 +14,15 @@
 
 5. Check for changes to new infrastructure plan
 
-        terraform plan -var="project=<your-gcp-project-id>"
+        terraform plan -var="project=your-gcp-project-id"
+
+   Replace the "your-gcp-project-id" with the actual Google Cloud Plaform Project ID.
 
 6. Create new infrastructure
 
-        terraform apply -var="project=<your-gcp-project-id>"
+        terraform apply -var="project=your-gcp-project-id"
+
+   Replace the "your-gcp-project-id" with the actual Google Cloud Plaform Project ID.
 
 ## Optional
 
