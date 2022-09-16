@@ -1,3 +1,7 @@
+# How to Set Up dbt Environment
+
+## Set Up dbt Cloud
+
 Welcome to your new dbt project!
 
 ### Using the starter project
