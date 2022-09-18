@@ -1,8 +1,9 @@
-# How to Set Up dbt Environment
+# dbt
 
-## Set Up dbt Cloud
+## Environment
+[Setup](./dbt-setup.md) the dbt environment.
 
-Welcome to your new dbt project!
+## Synopsis
 
 ### Using the starter project
 
