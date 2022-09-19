@@ -59,3 +59,7 @@ Go to the links above and click on the "Enable" button to enable these two APIs.
 ## Install Google Cloud SDK
 
 Go to [Google Cloud SDK](https://cloud.google.com/sdk/docs/quickstart) and install the SDK to be used when setting up Terraform.
+
+## Next Steps
+
+Now that the GCP has been set up, now provision these cloud resources using [Terraform](../terraform/README.md).

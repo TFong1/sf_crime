@@ -5,3 +5,10 @@ Small example of an data pipeline using San Francisco Police department incident
 ## Project Architecture
 
 ![San Francisco Crime Data Project Architecture](./images/SF-crime-architecture.png)
+
+## Required Components
+
+* [Google Cloud Platform](./gcp/README.md)
+* [Terraform](./terraform/README.md)
+* [Apache Airflow](./airflow/README.md)
+* [dbt](./dbt/README.md)
