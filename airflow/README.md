@@ -58,4 +58,4 @@ For this project, I decided to retreive the past 2 years worth of incident repor
 
 After this command executes, the Google Cloud Storage bucket should contain 2 years' worth of incident report data.
 
-Go to the [SQL](../SQL/README.md) folder to execute the SQL statement in BigQuery to load the dataset.
+Go to the [SQL](../SQL/) folder to execute the SQL statement in BigQuery to load the dataset.
