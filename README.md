@@ -8,7 +8,7 @@ Small example of an data pipeline using San Francisco Police department incident
 
 ## Required Components
 
-* [Google Cloud Platform](./gcp/README.md)
+* [Google Cloud Platform](./gcp/)
 * [Terraform](./terraform/README.md)
 * [Apache Airflow](./airflow/README.md)
 * [dbt](./dbt/README.md)
