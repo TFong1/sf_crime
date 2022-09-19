@@ -43,6 +43,8 @@ Enter a name for the connection.
 
 Click on "Upload a Service Account JSON file."  This file is the JSON file created when the BigQuery dbt service account was created [here](../gcp/README.md).  Uploading the JSON file will fill in the appropriate fields below this setting.
 
+Under "location (optional)" you can enter the location of the BigQuery region.  This can be found under the "Data location" in the project or dataset properties.
+
 Under "Development Credentials", the dataset name will be the name of the dataset in BigQuery under the Project ID.
 
 Press "Test Connection" to test the connection and move on to the next section.

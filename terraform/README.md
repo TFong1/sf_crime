@@ -30,3 +30,4 @@ Delete infrastructure after you complete your work to avoid costs on any running
 
     terraform destroy
 
+Now the infrastructure is ready to be used by [Airflow](../airflow/README.md).
