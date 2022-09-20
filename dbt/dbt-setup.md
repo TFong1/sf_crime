@@ -8,7 +8,7 @@ For this project, we will be using dbt to transform San Francisco crime incident
 
 Create a dbt cloud account at [https://getdbt.com/signup](https://getdbt.com/signup).  Connect to the Google cloud environment [using these instructions](https://docs.getdbt.com/docs/dbt-cloud/cloud-configuring-dbt-cloud/cloud-setting-up-bigquery-oauth).
 
-Refer back to [Create Service Account for dbt](../gcp/README.md) for instructions on how to create a Google Cloud Platform authentication key for dbt.
+Refer back to [Create Service Account for dbt](../gcp/README.md#create-service-account-for-dbt) for instructions on how to create a Google Cloud Platform authentication key for dbt.
 
 Once you have created an account and logged in, you will be prompted to create a new project.
 
@@ -41,7 +41,7 @@ Click "Next."
 
 Enter a name for the connection.
 
-Click on "Upload a Service Account JSON file."  This file is the JSON file created when the BigQuery dbt service account was created [here](../gcp/README.md).  Uploading the JSON file will fill in the appropriate fields below this setting.
+Click on "Upload a Service Account JSON file."  This file is the JSON file created when the BigQuery dbt service account was created [here](../gcp/README.md#create-service-account-for-dbt).  Uploading the JSON file will fill in the appropriate fields below this setting.
 
 Under "location (optional)" you can enter the location of the BigQuery region.  This can be found under the "Data location" in the project or dataset properties.
 
