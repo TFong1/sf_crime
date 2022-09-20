@@ -20,19 +20,21 @@ Click on "CREATE PROJECT".  Enter a project name (note the Project ID as you wil
 ## Create Service Account for dbt
 
 Click on the "Create Principal" button/link or [BigQuery credential wizard](https://console.cloud.google.com/apis/credentials/wizard) and follow the screens below:
-![](../images/BigQuery-Create-Credentials-01.png)
-![](../images/BigQuery-Create-Credentials-02.png)
-![](../images/BigQuery-Create-Credentials-03.png)
+![Credential Credentials](../images/BigQuery-Create-Credentials-01.png)
+![Create Service Account Details](../images/BigQuery-Create-Credentials-02.png)
+![Create Service Account Roles](../images/BigQuery-Create-Credentials-03.png)
 
 I forgot to include the "Viewer" role for this service account, so be sure to add it before creating the account.
-![](../images/BigQuery-Create-Credentials-06.png)
+![Add Viewer Role](../images/BigQuery-Create-Credentials-06.png)
+
+If you get an error when you run a dbt job, try to add the BigQuery Admin role to the dbt service account.  This probably should be temporary as you need admin rights to create a new dataset/table.
 
 ## Download the Service Account Keys (.JSON) for Authentication
 
 Now that the service account has been created, we need to add and download a JSON key.  Go to the Keys section, select "Create New Key."  Select key type "JSON."
-![](../images/BigQuery-Create-Credentials-04.png)
+![Create Authentication Key](../images/BigQuery-Create-Credentials-04.png)
 Be sure "JSON" is selected and click on Create.
-![](../images/BigQuery-Create-Credentials-05.png)
+![Select Key Type JSON](../images/BigQuery-Create-Credentials-05.png)
 
 Download the .json keys in a folder.  This JSON file will be used to set up dbt later.
 
