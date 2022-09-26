@@ -8,7 +8,7 @@ For this project, we will be using dbt to transform San Francisco crime incident
 
 Create a dbt cloud account at [https://getdbt.com/signup](https://getdbt.com/signup).  Connect to the Google cloud environment [using these instructions](https://docs.getdbt.com/docs/dbt-cloud/cloud-configuring-dbt-cloud/cloud-setting-up-bigquery-oauth).
 
-Refer back to [Create Service Account for dbt](../gcp/README.md) for instructions on how to create a Google Cloud Platform authentication key for dbt.
+Refer back to [Create Service Account for dbt](../gcp/README.md#create-service-account-for-dbt) for instructions on how to create a Google Cloud Platform authentication key for dbt.
 
 Once you have created an account and logged in, you will be prompted to create a new project.
 
@@ -41,7 +41,7 @@ Click "Next."
 
 Enter a name for the connection.
 
-Click on "Upload a Service Account JSON file."  This file is the JSON file created when the BigQuery dbt service account was created [here](../gcp/README.md).  Uploading the JSON file will fill in the appropriate fields below this setting.
+Click on "Upload a Service Account JSON file."  This file is the JSON file created when the BigQuery dbt service account was created [here](../gcp/README.md#create-service-account-for-dbt).  Uploading the JSON file will fill in the appropriate fields below this setting.
 
 Under "location (optional)" you can enter the location of the BigQuery region.  This can be found under the "Data location" in the project or dataset properties.
 
@@ -60,7 +60,7 @@ Select "Git Clone."  Select the GitHub SSH URL in the GitHub repository.  Click 
 ![Set up a Repository](../images/dbt-new-project-06.png)
 ![GitHub SSH URL](../images/dbt-new-project-07.png)
 
-#### *Optional* Set up a Deployment Key
+#### Set up a Deployment Key
 
 In the dbt project screen (or go to Account Settings -> Projects -> click on the project name) and click on the GitHub repository link.
 
@@ -71,3 +71,11 @@ Go to the GitHub repository Settings page and scroll down to Security and click 
 Click on the "Add deploy key" button and paste the value you just copied in dbt.  **Make sure the "Allow write access" checkbox is checked.** Click on "Add key."
 
 ![Add Deployment Key](../images/dbt-new-project-08.png)
+
+#### *Optional* Create a dbt Production Environment
+
+Log on to dbt Cloud, click on the dbt project and navigate to the Environments section.  Click on Create Environment button and enter the following information:
+
+![dbt Production Environment](../images/dbt-production-build-settings.png)
+
+In the GitHub repository, add the dbt production branch.  When dbt runs build, it wants to clone a repository.  For this repository, I added a branch protection rule for the main branch and the dbt build will fail unless I create a branch (when the "only run on a custom branch" is checked).  For this project, I created a branch called "dbt_production" to match my dbt project settings.

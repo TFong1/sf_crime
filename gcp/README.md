@@ -64,4 +64,4 @@ Go to [Google Cloud SDK](https://cloud.google.com/sdk/docs/quickstart) and insta
 
 ## Next Steps
 
-Now that the GCP has been set up, now provision these cloud resources using [Terraform](../terraform/README.md).
+Now that the GCP has been set up, now provision these cloud resources using [Terraform](../terraform/).
