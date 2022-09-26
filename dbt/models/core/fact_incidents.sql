@@ -42,6 +42,7 @@ SELECT
     incident_data.supervisor_district,
     incident_data.latitude,
     incident_data.longitude,
+    incident_data.point,
     incident_data.filed_online
 FROM incident_data
 INNER JOIN dim_incident_codes
