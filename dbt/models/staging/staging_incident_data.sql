@@ -33,6 +33,7 @@ SELECT
     CAST(supervisor_district AS INTEGER) AS supervisor_district,
     latitude,
     longitude,
+    ST_GEOGPOINT(longitude, latitude) AS point,
     CAST (
         CASE
             WHEN filed_online = 1.0 THEN TRUE
