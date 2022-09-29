@@ -12,3 +12,13 @@ Small example of an data pipeline using San Francisco Police department incident
 * [Terraform](./terraform/)
 * [Apache Airflow](./airflow/)
 * [dbt](./dbt/)
+
+## Visualizations
+
+![Category Distribution](./images/category-distribution.png)
+
+![Top Ten Incidents by Category](./images/top-ten-incidents-by-category.png)
+
+![Incidents per Day](./images/incidents-per-day.png)
+
+![Incident Heat Map](./images/incident-heat-map.png)
