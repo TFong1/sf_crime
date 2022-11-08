@@ -147,19 +147,20 @@ sf_crime_data_dag = DAG(
 	max_active_runs=1
 )
 
-sf_crime_csv_file = "sf_crime_{{ macros.ds_format(ds, '%Y-%m-%d', '%Y-%m') }}.csv"
-current_year = "{{ macros.ds_format(ds, '%Y-%m-%d', '%Y') }}"
-current_month = "{{ macros.ds_format(ds, '%Y-%m-%d', '%m') }}"
+target_year = "{{ execution_date.subtract(months=1).strftime('%Y') }}"
+target_month = "{{ execution_date.subtract(months=1).strftime('%m') }}"
+
+sf_crime_csv_file = f"sf_crime_{target_year}-{target_month}.csv"
 sf_crime_parquet_file = sf_crime_csv_file.replace(".csv", ".parquet")
 sf_crime_csv_path = f"{path_to_local_home}/{sf_crime_csv_file}"
 sf_crime_parquet_path = f"{path_to_local_home}/{sf_crime_parquet_file}"
-gcs_year_subfolder = "{{ macros.ds_format(ds, '%Y-%m-%d', '%Y') }}"
+gcs_year_subfolder = target_year
 sf_crime_target_gcs_parquet_path = f"raw/sf_crime_data/{gcs_year_subfolder}/{sf_crime_parquet_file}"
 
 upload_parquetized_crime_data(
 	dag=sf_crime_data_dag,
-	year=current_year,
-	month=current_month,
+	year=target_year,
+	month=target_month,
 	local_csv_path=sf_crime_csv_path,
 	local_parquet_path=sf_crime_parquet_path,
 	gcs_parquet_path=sf_crime_target_gcs_parquet_path
