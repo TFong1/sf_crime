@@ -25,11 +25,11 @@ The following tools are used in this project:
 
 ## Visualizations
 
-Below are images captured by visualizations I created in [Google Data Studio](https://datastudio.google.com/).  If you would like to see the original dashboards, follow these links:
+Below are images captured by visualizations I created in [Google Looker Studio](https://lookerstudio.google.com/).  If you would like to see the original dashboards, follow these links:
 
-* [San Francisco Incidents in 2020 Through 2022](https://datastudio.google.com/reporting/873acd19-806d-40c6-ba19-974e43a9e8e3)
+* [San Francisco Incidents in 2020 Through 2022](https://lookerstudio.google.com/reporting/873acd19-806d-40c6-ba19-974e43a9e8e3)
 
-* [Map of San Francisco Incidents from 2020 through 2022](https://datastudio.google.com/reporting/d888027a-3aab-4cce-b2fa-d1e17c05ea99)
+* [Map of San Francisco Incidents from 2020 through 2022](https://lookerstudio.google.com/reporting/d888027a-3aab-4cce-b2fa-d1e17c05ea99)
 
 ### Distribution of Reported Incidents by Category
 

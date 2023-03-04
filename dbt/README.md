@@ -1,6 +1,7 @@
 # dbt
 
 ## Environment
+
 [Setup](./dbt-setup.md) the dbt environment.
 
 ## Data Pipeline
@@ -16,6 +17,19 @@
 * dim_incident_codes -- dimension table containing the incident codes, category, and subcategory.
 
 * fact_incidents -- fact table containing the incident report data.
+
+    Note: the fact_incidents table is partitioned by the month of the incident date.
+
+    ```
+        {{ config(
+            materialized='table',
+            partition_by={
+                "field": "incident_datetime",
+                "data_type": "datetime",
+                "granularity": "month"
+            }
+        ) }}
+    ```
 
 * dm_monthly_incidents -- summary table containing incident count by month and category.
 
