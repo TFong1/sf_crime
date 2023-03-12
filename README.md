@@ -10,7 +10,7 @@ Below is a pictoral description of the architecture used in this project.
 
 ![San Francisco Crime Data Project Architecture](./images/SF-crime-architecture.png)
 
-To summarize, the Airflow DAG will extract the data from the San Francisco data portal via Socrata Open Data API and upload parquet files to the data lake. From there data is moved from the lake to warehouse. dbt will transform the data in the warehouse to be used by Google Data Studio.
+To summarize, the Airflow DAG will extract the data from the San Francisco data portal via Socrata Open Data API and upload parquet files to the data lake. From there data is moved from the lake to warehouse. dbt will transform the data in the warehouse to be used by Google Looker Studio.
 
 ## Required Components
 
@@ -21,7 +21,7 @@ The following tools are used in this project:
 * [Apache Airflow](./airflow/)
 * [dbt](./dbt/)
 * [Socrata Open Data Application Programming Interface (SODA)](https://dev.socrata.com/)
-* [Google Data Studio](https://datastudio.google.com)
+* [Google Looker Studio (Formally Google Data Studio)](https://lookerstudio.google.com)
 
 ## Visualizations
 
@@ -37,7 +37,7 @@ Let's examine the spread of the types of incidents reported to the San Francisco
 
 ![Category Distribution](./images/category-distribution.png)
 
-As you can see, larceny theft (29.6%) is the majority of incidents reported in San Francisco followed by malicious mischief (22.9%).
+As you can see, larceny theft (30.2%) is the majority of incidents reported in San Francisco followed by malicious mischief (21.7%).
 
 ### Top 10 Reported Incidents by Subcategory
 
