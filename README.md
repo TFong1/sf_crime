@@ -4,25 +4,6 @@ I'm simply curious about the nature of crime in the city of San Francisco. Let's
 
 For this analysis, I will use the city of [San Francisco's Open Data Portal](https://datasf.org/opendata/) to grab the incident report data.
 
-## Project Architecture
-
-Below is a pictoral description of the architecture used in this project.
-
-![San Francisco Crime Data Project Architecture](./images/SF-crime-architecture.png)
-
-To summarize, the Airflow DAG will extract the data from the San Francisco data portal via Socrata Open Data API and upload parquet files to the data lake. From there data is moved from the lake to warehouse. dbt will transform the data in the warehouse to be used by Google Looker Studio.
-
-## Required Components
-
-The following tools are used in this project:
-
-* [Google Cloud Platform](./gcp/)
-* [Terraform](./terraform/)
-* [Apache Airflow](./airflow/)
-* [dbt](./dbt/)
-* [Socrata Open Data Application Programming Interface (SODA)](https://dev.socrata.com/)
-* [Google Looker Studio (Formally Google Data Studio)](https://lookerstudio.google.com)
-
 ## Visualizations
 
 Below are images captured by visualizations I created in [Google Looker Studio](https://lookerstudio.google.com/).  If you would like to see the original dashboards, follow these links:
@@ -72,3 +53,7 @@ Some good questions to ask are:
 2. Is there a particular reason why the area around Union Square has a high number of incidents?
 
 3. Most of the incidents reported seem to be centered around theft. Is this an indication of a bad economy and high unemployment?
+
+## Project Creation
+
+If you would like to know more about how this project was constructed, view the [recreate_project.md](./recreate_project.md) file.
