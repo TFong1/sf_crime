@@ -1,6 +1,6 @@
 # San Francisco Crime Data Engineering Capstone Project
 
-This document provides an overview of how the project is constructed and steps I took to create the project.
+This document provides an overview of the project construction and steps to recreate it.
 
 ## Project Architecture
 
@@ -8,7 +8,19 @@ Below is a pictoral description of the architecture used in this project.
 
 ![San Francisco Crime Data Project Architecture](./images/SF-crime-architecture.png)
 
-To summarize, the Airflow DAG will extract the data from the San Francisco data portal via Socrata Open Data API and upload parquet files to the data lake. From there data is moved from the lake to warehouse. dbt will transform the data in the warehouse to be used by Google Looker Studio.
+The workflow is as the following:
+
+1. Extract Data
+    * Airflow extracts data from the San Francisco data portal using the Socrata Open Data API
+    * Airflow runs in a Docker container
+    * Airflow generates parquet files
+2. Upload to Data Lake
+    * Upload parquet files to the data lake
+    * Google Cloud environment is created by Terraform
+3. Move to Data Warehouse
+    * Data is moved from the lake to warehouse via SQL statement executed in GCP
+4. Transform Data
+    * dbt transforms the data in the warehouse for use by Google Looker Studio
 
 ## Steps to Create Project
 
