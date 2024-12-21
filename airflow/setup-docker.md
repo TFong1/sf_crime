@@ -43,4 +43,4 @@ docker-compose up airflow-init
 
 This command will set up the Airflow scheduler, database, and other configuration settings in the docker-compose.yaml file.
 
-Go back to the [Airflow setup](./README.md) to complete the configuration of Airflow.
+Go back to the [Airflow setup](./README.md#run-all-airflow-services-in-docker) to complete the configuration of Airflow.
