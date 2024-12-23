@@ -3,7 +3,7 @@
 ## Introduction
 
 Google Cloud Platform (GCP) is used to house our data lake and data warehouse for this project.
-The Airflow DAG will upload parquet files to the Google Cloud Storage (GCS) bucket.  Let's set up our Google Cloud environment.
+The Airflow Directed Acyclic Graph (DAG) will upload parquet files to the Google Cloud Storage (GCS) bucket.  Let's set up our Google Cloud environment.
 
 ## Logon / Create Google Cloud Account
 
@@ -30,7 +30,7 @@ The Airflow DAG will upload parquet files to the Google Cloud Storage (GCS) buck
     * Add the "Viewer" role by clicking + ADD ANOTHER ROLE.
 ![Add Viewer Role](../images/BigQuery-Create-Credentials-06.png)
 
-If you get an error when you run a dbt job, try to add the BigQuery Admin role to the dbt service account.  This probably should be temporary as you need admin rights to create a new dataset/table.
+Note: If you get an error when you run a dbt job, try to add the BigQuery Admin role to the dbt service account.  This probably should be temporary as you need admin rights to create a new dataset/table.
 
 ## Download the Service Account Keys (.JSON) for Authentication
 
