@@ -13,14 +13,14 @@ The workflow is as the following:
 1. Extract Data
     * Airflow extracts data from the San Francisco data portal using the Socrata Open Data API
     * Airflow runs in a Docker container
-    * Airflow generates parquet files
+    * Airflow creates parquet files
 2. Upload to Data Lake
-    * Upload parquet files to the data lake
+    * Airflow uploads parquet files to the data lake
     * Google Cloud environment is created by Terraform
 3. Move to Data Warehouse
     * Data is moved from the lake to warehouse via SQL statement executed in GCP
 4. Transform Data
-    * dbt transforms the data in the warehouse for use by Google Looker Studio
+    * dbt transforms data to the warehouse for use by Google Looker Studio
 
 ## Steps to Create Project
 
