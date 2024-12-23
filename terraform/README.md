@@ -38,7 +38,7 @@ This project uses Terraform to provision resources in Google Cloud Platform (GCP
 
     * Replace "your-gcp-project-id" with your actual Google Cloud Plaform Project ID.
 
-## Optional
+## Delete Infrastructure (*Optional*)
 
 Delete infrastructure after you complete your work to avoid costs on any running services. Run this command to delete Google Cloud Platform resources:
 
