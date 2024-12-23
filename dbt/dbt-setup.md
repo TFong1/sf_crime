@@ -84,7 +84,7 @@ Create a new dbt cloud project and configure the project as follows:
 
 ![Add Deployment Key](../images/dbt-new-project-08.png)
 
-### *Optional* Create a dbt Production Environment
+### Create a dbt Production Environment (*Optional*)
 
 1. Log on to dbt Cloud
 2. Click on the dbt project
