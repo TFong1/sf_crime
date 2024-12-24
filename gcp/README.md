@@ -5,12 +5,22 @@
 Google Cloud Platform (GCP) is used to house our data lake and data warehouse for this project.
 The Airflow Directed Acyclic Graph (DAG) will upload parquet files to the Google Cloud Storage (GCS) bucket.  Let's set up our Google Cloud environment.
 
+Steps to set up Google Cloud Platform
+
+1. Logon or Create Google Cloud Account
+2. Create a Google Cloud Project
+3. Create a Service Account for dbt
+4. Download Service Account Keys for Authentication
+5. Create Service Account for Airflow
+6. Enable Google Cloud Project API
+7. Install Google Cloud Software Developer Kit
+
 ## Logon / Create Google Cloud Account
 
 1. Go to [https://console.cloud.google.com](https://console.cloud.google.com)
 2. Create a new Google Cloud account or log in to an existing account
 
-## Create a Project
+## Create a Google Cloud Project
 
 1. Go to the [Cloud Resource Manager page](https://console.cloud.google.com/cloud-resource-manager)
 2. Click on "CREATE PROJECT"
@@ -23,26 +33,34 @@ The Airflow Directed Acyclic Graph (DAG) will upload parquet files to the Google
 
 1. Click on the "Create Principal" button/link or [BigQuery credential wizard](https://console.cloud.google.com/apis/credentials/wizard)
 2. Follow the screens below:
-![Credential Credentials](../images/BigQuery-Create-Credentials-01.png)
-![Create Service Account Details](../images/BigQuery-Create-Credentials-02.png)
-![Create Service Account Roles](../images/BigQuery-Create-Credentials-03.png)
 
-    * Add the "Viewer" role by clicking + ADD ANOTHER ROLE.
-![Add Viewer Role](../images/BigQuery-Create-Credentials-06.png)
+    ![Credential Credentials](../images/BigQuery-Create-Credentials-01.png)
 
-Note: If you get an error when you run a dbt job, try to add the BigQuery Admin role to the dbt service account.  This probably should be temporary as you need admin rights to create a new dataset/table.
+    ![Create Service Account Details](../images/BigQuery-Create-Credentials-02.png)
 
-## Download the Service Account Keys (.JSON) for Authentication
+    ![Create Service Account Roles](../images/BigQuery-Create-Credentials-03.png)
 
-Now that the service account has been created, we need to add and download a JSON key.
+    Add the "Viewer" role by clicking + ADD ANOTHER ROLE.
+
+    ![Add Viewer Role](../images/BigQuery-Create-Credentials-06.png)
+
+Note: If you get an error when you run a dbt job, add the BigQuery Admin role to the dbt service account.  This is temporary as you need administrator rights to create a new dataset/table.
+
+## Download the Service Account Keys for Authentication
+
+Now that the service account is created, add and download the JSON key.
 
 1. Select the Keys tab
 2. Click on "ADD KEY"
 3. Select "Create New Key"
-![Create Authentication Key](../images/BigQuery-Create-Credentials-04.png)
+
+    ![Create Authentication Key](../images/BigQuery-Create-Credentials-04.png)
+
 4. Select key type "JSON"
 5. Be sure "JSON" is selected and click on Create
-![Select Key Type JSON](../images/BigQuery-Create-Credentials-05.png)
+
+    ![Select Key Type JSON](../images/BigQuery-Create-Credentials-05.png)
+
 6. Download the .json keys to any folder.  This JSON file will be used to set up dbt later.
 
 ## Create Service Account for the ELT/Airflow Process
@@ -59,7 +77,7 @@ Now that the service account has been created, we need to add and download a JSO
 4. Reference the JSON file in the /airflow/.env file under GOOGLE_APPLICATION_CREDENTIALS
 5. Reference the variable "credentials" in the /terraform/variables.tf file.
 
-## Enable API for the Google Cloud Project
+## Enable Google Cloud Project API
 
 1. Click the links below:
 
@@ -70,7 +88,7 @@ Now that the service account has been created, we need to add and download a JSO
 
 ## Install Google Cloud SDK
 
-Go to [Google Cloud SDK](https://cloud.google.com/sdk/docs/quickstart) and install the SDK to be used when setting up Terraform.
+Setting up Terraform for this project requires you install the [Google Cloud SDK](https://cloud.google.com/sdk/docs/quickstart).
 
 ## Next Steps
 
