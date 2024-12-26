@@ -20,9 +20,9 @@ The workflow is as the following:
         * Google Cloud Storage is the data lake
         * BigQuery database is the data warehouse
 3. Move to Data Warehouse
-    * Data is moved from the lake to warehouse via SQL statement executed in GCP
+    * Data is moved from the lake to staging area (BigQuery database) via SQL statement executed in GCP
 4. Transform Data
-    * dbt transforms data to the warehouse for use by Google Looker Studio
+    * dbt transforms data from staging area to the warehouse for use by Google Looker Studio
 
 ## Steps to Create Project
 
