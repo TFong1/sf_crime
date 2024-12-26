@@ -26,7 +26,7 @@ The workflow is as the following:
 
 ## Steps to Create Project
 
-This document outlines the steps to recreate this project.
+Steps to recreate this project.
 
 1. [Set Up Google Cloud Platform Project](./gcp/)
 2. [Create Infrastructure Using Terraform](./terraform/)
