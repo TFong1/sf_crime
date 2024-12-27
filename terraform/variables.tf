@@ -29,5 +29,5 @@ variable "BQ_DATASET" {
 variable "credentials" {
   type = string
   description = "Location of Google credentials file"
-  default = "/home/fongt/.google/credentials/etl-sf-crime-76032-credentials.json"
+  default = "credentials.json"
 }
