@@ -1,6 +1,6 @@
 # Apache Airflow
 
-This project runs Apache Airflow in a Docker container.
+The Apache Airflow Directed Acyclic Graph (DAG) in a Docker container.
 
 Airflow retrieves San Francisco incident data from the [San Francisco Police Department Incident Report dataset](https://data.sfgov.org/Public-Safety/Police-Department-Incident-Reports-2018-to-Present/wg3w-h783).
 
@@ -34,11 +34,11 @@ To configure and run airflow, you will need to do the following:
 
 Before running Airflow in a Docker container, you must first do some initialization and [setup](./setup-docker.md).
 
-After that's done, create the DAG file and save it to the dags folder.
+After that's done, be sure the DAG file is in the dags folder.
 
 ## Run All Airflow Services in Docker
 
-Use the following command to run Airflow in a Docker container:
+Run the following command to execute the Airflow DAG in a Docker container:
 
 ```sh
 docker-compose up
@@ -80,5 +80,7 @@ For this project, I decided to retreive the past 2 years worth of incident repor
     ```
 
 After this command executes, the Google Cloud Storage bucket should contain 2 years' worth of incident report data.
+
+## Next Step
 
 Go to the [SQL](../SQL/) folder to execute the SQL statement in BigQuery to load the dataset.

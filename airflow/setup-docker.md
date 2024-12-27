@@ -2,13 +2,13 @@
 
 Create the Airflow environment by:
 
-1. Create Docker configuration files
+1. Docker configuration files
 2. Build Docker image
 3. Initialize Airflow containers
 
-## Create Docker Configuration Files
+## Docker Configuration Files
 
-Create the following files to run Airflow in a Docker container:
+Use the following files to run Airflow in a Docker container:
 
 * docker-compose.yaml
   * Modified version of the official [Docker setup file](https://airflow.apache.org/docs/apache-airflow/stable/docker-compose.yaml) for this project
