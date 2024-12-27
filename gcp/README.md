@@ -61,7 +61,7 @@ Now that the service account is created, add and download the JSON key.
 
     ![Select Key Type JSON](../images/BigQuery-Create-Credentials-05.png)
 
-6. Download the .json keys to any folder.  This JSON file will be used to set up dbt later.
+6. Download the .json keys to any folder.  This JSON file will be used to set up terraform and dbt later.
 
 ## Create Service Account for the ELT/Airflow Process
 
