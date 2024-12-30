@@ -2,7 +2,14 @@
 
 Data Build Tool (dbt) is a tool that transforms data in data warehouses using SQL SELECT statements.
 
-For this project, we will be using dbt to transform San Francisco crime incident data that has been loaded into a Star schema.  More information about dbt can be found [here](https://docs.getdbt.com/docs/introduction).
+For this project, we will be using dbt to transform San Francisco crime incident data to a Star schema.
+
+This guide covers the following topics:
+
+* Environment
+* Data Pipeline
+* Build the dbt Project
+* Resources
 
 ## Environment
 
@@ -10,18 +17,20 @@ For this project, we will be using dbt to transform San Francisco crime incident
 
 ## Data Pipeline
 
+The data pipeline for this project is composed of the following models:
+
 ![Data Pipeline](../images/dm-monthly-incidents.png)
 
 * staging.external_incident_data
-  * raw data loaded from the [SQL script](../SQL/load-parquet-to-staging.sql) that loads the data from extracted San Francisco incident report performed by [Airflow](../airflow/)
+  * Raw data loaded from the [SQL script](../SQL/load-parquet-to-staging.sql) that loads the data from extracted San Francisco incident report performed by [Airflow](../airflow/)
 * incident_codes_lookup
-  * seed data from the [incident code](https://data.sfgov.org/Public-Safety/Reference-Police-Department-Incident-Code-Crosswal/ci9u-8awy) reference
+  * Seed data from the [incident code](https://data.sfgov.org/Public-Safety/Reference-Police-Department-Incident-Code-Crosswal/ci9u-8awy) reference
 * staging_incident_data
-  * clean/wrangle the raw data to their correct data types and remove any duplicate rows
+  * Clean/wrangle the raw data to their correct data types and remove any duplicate rows
 * dim_incident_codes
-  * dimension table containing the incident codes, category, and subcategory.
+  * Dimension table containing the incident codes, category, and subcategory.
 * fact_incidents
-  * fact table containing the incident report data
+  * Fact table containing the incident report data
 
     Note: the fact_incidents table is partitioned by the month of the incident date
 
@@ -37,11 +46,11 @@ For this project, we will be using dbt to transform San Francisco crime incident
     ```
 
 * dm_monthly_incidents
-  * summary table containing incident count by month and category
+  * Summary table containing incident count by month and category
 
 ## Build the dbt Project
 
-The following commands are used to build the dbt project:
+Execute the following commands to build and run the dbt project:
 
 ```sh
 dbt seed
@@ -52,6 +61,8 @@ dbt test
 The variable "is_test_run" is used for testing.  Running with default parameters only executes the first 100 rows as to save time and resources when testing.
 
 ### Resources
+
+If you would like to know more about the dbt tool:
 
 * Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
 * Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers

@@ -1,6 +1,6 @@
 # How to Set Up dbt Environment
 
-This is a guide to setting up and configuring the dbt environment. This project uses the dbt cloud, but the local version of dbt can be used as well.
+This is a guide to set up and configure the dbt environment. This project uses the dbt cloud, but the local version of dbt can be used as well.
 
 The following are covered in this document:
 
@@ -9,8 +9,6 @@ The following are covered in this document:
 3. Set Up a New Project
 
 ## Create a dbt Cloud Account
-
-Create a dbt cloud account:
 
 1. Create a dbt cloud account
     * Sign up at [https://getdbt.com/signup](https://getdbt.com/signup) if you do not have a dbt cloud account
@@ -40,46 +38,62 @@ Create a new dbt cloud project and configure the project as follows:
 
 ### Choose a Warehouse
 
-1. Choose BigQuery as the type of data warehouse dbt should connect to
+1. Choose BigQuery
 2. Click "Next"
 
 ![Choose a Warehouse](../images/dbt-new-project-02.png)
 
 ### Configure Your Environment
 
+Follow the steps to configure your dbt environment. Screenshots are provided for your reference.
+
 1. Enter a name for the connection
 2. Click on "Upload a Service Account JSON file."
     * This is the JSON file created when the BigQuery dbt service account was [created](../gcp/README.md#create-service-account-for-dbt)
     * Uploading the JSON file will fill in the appropriate fields below this setting
+
+    ![Configure Your Environment page 1](../images/dbt-new-project-03.png)
+
 3. Under "location (optional)" you can enter the location of the BigQuery region
     * This can be found under the "Data location" in the project or dataset properties.
+
+    ![Configure Your Environment page 2](../images/dbt-new-project-04.png)
+
 4. Under "Development Credentials", the dataset name is the name of the dataset in BigQuery under the Project ID
 5. Press "Test Connection"
-    * Tests the connection
+    * If test connection fails, verify the information you have entered
 6. Move on to the next section
 
-![Configure Your Environment page 1](../images/dbt-new-project-03.png)
-![Configure Your Environment page 2](../images/dbt-new-project-04.png)
-![Configure Your Environment page 3](../images/dbt-new-project-05.png)
+    ![Configure Your Environment page 3](../images/dbt-new-project-05.png)
 
 ### Set up a Repository
 
-1. Select "Git Clone"
-2. Select the GitHub SSH URL in the GitHub repository
-3. Click "Import"
+Follow the steps to set up the GitHub repository. Screenshots are provided for your reference.
 
-![Set up a Repository](../images/dbt-new-project-06.png)
-![GitHub SSH URL](../images/dbt-new-project-07.png)
+1. Select "Git Clone"
+
+    ![Set up a Repository](../images/dbt-new-project-06.png)
+
+2. Copy or enter the GitHub SSH URL in the GitHub repository
+    * The GitHub SSH URL can be found by going to your GitHub repository's code root page
+    * Click on the down arrow next to the green Code button
+    * Select the SSH tab
+    * Copy the SSH URL
+
+    ![GitHub SSH URL](../images/dbt-new-project-07.png)
+
+3. Paste the URL in step 2 to the Git URL text box
+4. Click "Import"
 
 ### Set up a Deployment Key
 
-1. In the dbt project screen (or go to Account Settings -> Projects -> click on the project name) and click on the GitHub repository link
+1. In the dbt project screen (Account Settings -> Projects -> project name), click on the GitHub repository link
 2. Copy the contents of the "Deploy Key" text box
 3. Go to the GitHub repository Settings page
 4. Scroll down to Security and click on "Deploy Keys"
 5. Click on the "Add deploy key" button
 6. Paste the value you just copied in dbt
-    * **Make sure the "Allow write access" checkbox is checked.**
+    * **Note: make sure the "Allow write access" checkbox is checked**
 7. Click on "Add key"
 
 ![Add Deployment Key](../images/dbt-new-project-08.png)
