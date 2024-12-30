@@ -1,25 +1,46 @@
 # How to Set Up Apache Airflow Environment
 
-## Create Docker Configuration Files
+Create the Airflow environment by:
 
-Create the following files to run Airflow in a Docker container:
+1. Docker configuration files
+2. Build Docker image
+3. Initialize Airflow containers
 
-* docker-compose.yaml -- modified version of the official [Docker setup file](https://airflow.apache.org/docs/apache-airflow/stable/docker-compose.yaml) for the latest Airflow version.
+## Docker Configuration Files
 
-* Dockerfile -- installs any required software to the container when the Docker container is built.  Referenced in docker-compose.yaml.
+Use the following files to run Airflow in a Docker container:
 
-* .env -- specifies the environment variables for the container instance when it is run.  This file is referenced in docker-compose.yaml.
+* docker-compose.yaml
+  * Modified version of the official [Docker setup file](https://airflow.apache.org/docs/apache-airflow/stable/docker-compose.yaml) for this project
 
-* requirements.txt -- specifies the python libraries that are installed in the container when the Docker image is built.  Referenced in Dockerfile.
+* Dockerfile
+  * Installs required software to the container when the Docker container is built
+  * Referenced in docker-compose.yaml
+
+* .env
+  * Specifies the environment variables for the container instance when it is run
+  * Referenced in docker-compose.yaml
+
+* requirements.txt
+  * Specifies the Python libraries to be installed in the container when the Docker image is built
+  * Referenced in Dockerfile
 
 ## Build Docker Image
 
-Build the image using the following command:
+Build the Docker image using the following command:
 
-    docker-compose build
+```sh
+docker-compose build
+```
 
-## Initialize Airflow containers (scheduler, database, and other configuration settings)
+## Initialize Airflow containers
 
 Run the following command to initialize Airflow:
 
-    docker-compose up airflow-init
+```sh
+docker-compose up airflow-init
+```
+
+This command will set up the Airflow scheduler, database, and other configuration settings in the docker-compose.yaml file.
+
+Go back to the [Airflow setup](./README.md#run-all-airflow-services-in-docker) to complete the configuration of Airflow.

@@ -1,6 +1,6 @@
 # San Francisco Crime Data Engineering Capstone Project
 
-I'm simply curious about the nature of crime in the city of San Francisco. Let's examine the data of the crime incidents reported from January 1, 2020 to August 1, 2022.
+Let's examine the nature of the crime incidents in the city of San Francisco reported from January 1, 2020 to August 1, 2022.
 
 For this analysis, I will use the city of [San Francisco's Open Data Portal](https://datasf.org/opendata/) to grab the incident report data.
 
