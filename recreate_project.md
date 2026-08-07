@@ -22,7 +22,7 @@ The workflow is as the following:
 3. Move to Data Warehouse
     * Data is moved from the lake to staging area (BigQuery database) via SQL statement executed in GCP
 4. Transform Data
-    * dbt transforms data from staging area to the warehouse for use by Google Looker Studio
+    * dbt transforms data from staging area to the warehouse for use by Google Data Studio
 
 ## Steps to Create Project
 
@@ -43,4 +43,4 @@ Below are some of the links to the components used to create this project.
 * [Apache Airflow](https://airflow.apache.org)
 * [dbt](https://getdbt.com)
 * [Socrata Open Data Application Programming Interface (SODA)](https://dev.socrata.com/)
-* [Google Looker Studio (Formally Google Data Studio)](https://lookerstudio.google.com)
+* [Google Data Studio (Formally Google Looker Studio)](https://datastudio.google.com)
